@@ -10,7 +10,7 @@ const server = http.createServer((req, res) => {
       path += "homePage.html";
       break;
     case "/about":
-      path += "ourServices.htm";
+      path += "ourServices.html";
       break;
     default:
       path += "contactUs.html";

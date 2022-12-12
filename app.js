@@ -2,6 +2,23 @@ const express=require('express');
 
 const app=express();
 
+
+app.use(function (req, res, next) {
+    const d=new Date();
+    const day=d.getDay()  
+    const hour=d.getHours()
+    if (0<day && day<6) {
+        if(8<=hour && hour<=18){
+            return next();
+        }
+    } 
+  return res.send('we are close')
+   
+    
+  });
+
+
+
 app.listen(3000);
 
 app.get('/',(req,res)=>{
